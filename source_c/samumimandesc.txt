@@ -1,0 +1,3 @@
+SamUMI takes a SAM file (or two FASTQs) and extracts various pieces of sequence from each read pair.
+Namely, it will hunt down one of a set of primers and anchors (and the sequence between the two), along with the UMI and common sequence.
+It will spit out the results in a tsv.
