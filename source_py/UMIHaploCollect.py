@@ -1,6 +1,23 @@
 import sys
 import math
 
+for inarg in sys.argv[1:]:
+    if (inarg == "--help") or (inarg == "-h") or (inarg == "/?"):
+        print("Collects UMI family data into haplotypes.")
+        print("Expects input data over stdin.")
+        print("Spits output onto stdout.")
+        sys.exit(0)
+    if inarg == "--version":
+        print("SAMmed UMI 0.0")
+        print("Copyright (C) 2021 UNT Center for Human Identification")
+        print("License LGPLv3+: GNU LGPL version 3 or later")
+        print("    <https://www.gnu.org/licenses/lgpl-3.0.html>")
+        print("This is free software: you are free to change and redistribute it.")
+        print("There is NO WARRANTY, to the extent permitted by law.")
+        sys.exit(0)
+    raise ValueError("Unknown argument: " + inarg)
+
+
 def safeLog(forV):
     if forV == 0.0:
         return -math.inf
