@@ -14,5 +14,3 @@ for v in source_com_any_linux/*.cpp; do g++ -pthread $v -g -O0 -Wall -Ibuilds/in
 for v in source_com_x64_any/*.cpp; do g++ -pthread $v -g -O0 -Wall -Ibuilds/inc_x64_linux -c -o builds/obj_x64_linux/$(basename $v .cpp).o; done;
 for v in source_samumi/*.cpp; do g++ -pthread $v -g -O0 -Wall -Ibuilds/inc_x64_linux -c -o builds/obj_x64_linux/$(basename $v .cpp).o; done;
 g++ -pthread -o builds/bin_x64_linux/samumi builds/obj_x64_linux/*.o -g -O0 -Wall -Ibuilds/inc_x64_linux -lz -ldl
-
-./builds/bin_x64_linux/samumi --helpdumpgui | python3 utilities/ManPageBuilder.py samumi "analyze UMI tagged reads" samumimandesc.txt > builds/bin_x64_linux/samumi.1

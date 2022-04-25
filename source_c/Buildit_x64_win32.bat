@@ -14,5 +14,3 @@ FOR %%v in (source_com_any_win32\*.cpp) DO g++ -mthreads %%v -g -O0 -Wall -Ibuil
 FOR %%v in (source_com_x64_any\*.cpp) DO g++ -mthreads %%v -g -O0 -Wall -Ibuilds\inc_x64_win32 -c -o builds\obj_x64_win32\%%~nv.o
 FOR %%v in (source_samumi\*.cpp) DO g++ -mthreads %%v -g -O0 -Wall -Ibuilds\inc_x64_win32 -c -o builds\obj_x64_win32\%%~nv.o
 g++ -mthreads -o builds\bin_x64_win32\samumi.exe builds\obj_x64_win32\*.o -g -O0 -Wall -Ibuilds\inc_x64_win32 -lz -static-libgcc -static-libstdc++ -static -lpthread
-
-builds\bin_x64_win32\samumi --helpdumpgui | python utilities\ManPageBuilder.py samumi "analyze UMI tagged reads" samumimandesc.txt > builds\bin_x64_win32\samumi.1
